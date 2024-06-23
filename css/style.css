@@ -1,0 +1,160 @@
+.navbar {
+   background-color: #032830;
+   color: white;
+}
+
+.logo {
+   margin-left: 40px;
+   text-align: center;
+   cursor: pointer;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.d-flex{
+    gap: 10px;
+}
+
+.search-input {
+    display: flex;
+    justify-content: space-around;
+    background: url('../asset/search.png') no-repeat 10px center;
+    background-size: 16px 16px;
+    padding-left: 36px;
+}
+
+.search-input.has-text {
+    background: none;
+}
+
+.search-input::placeholder {
+    float: inline-end;
+}
+
+.search-btn{
+    color: white !important;
+    border: 1px solid #fff !important;
+    padding: 5px 30px !important;
+}
+
+.btn:hover{
+    background-color: #047088 !important;
+}
+
+.add-student{
+    float: inline-end;
+    margin: 15px;
+}
+
+.add-btn{
+    color: white !important;
+    background-color: #032830 !important;
+    padding: 8px 15px !important;
+}
+
+.card-container{
+    gap: 50px;
+    margin-top: 5%;
+    display: grid ;
+    justify-content: center;
+    text-align: center;
+    grid-template-columns: auto auto auto auto;
+}
+
+.student-card {
+    border: 1px solid #032830;
+    width: 350px !important;
+    height: auto !important;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #032830;
+}
+
+.student-card img{
+    padding: 20px;
+    width: 150px;
+    height: auto;
+}
+
+.card-head{
+    background-color: #ffc107 !important;
+}
+
+.card-body{
+    text-align: center;
+    color: white !important;
+    background-color: #032830;
+}
+
+.content{
+    margin: 5px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr;
+    text-align: left;
+}
+
+.content h6{
+    margin: 0;
+}
+
+.output{
+    text-align: left;
+}
+
+.delete-btn{
+    margin: 20px 0 5px 0;
+    border: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    background-color: #dc3545 !important;
+    padding: 5px 30px !important;
+}
+
+.delete-btn:hover{
+    color: #032830 !important;
+    background-color: #ffc107 !important;
+}
+
+.modal-footer{
+    justify-content: flex-start !important;
+}
+
+.form-group{
+    margin: 20px 0 20px 0 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+    display: none;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.popup-message {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
