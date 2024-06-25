@@ -1,5 +1,3 @@
-
-  
 let students = [
     {
         name: "Kavindu Perera",
@@ -26,7 +24,7 @@ function displayStudents() {
         card.style.width = '18rem';
         card.innerHTML = `
             <div class="card-head">
-                <img src="./asset/${student.gender === 'Male' ? 'boy' : 'girl'}.png" class="card-img-top" alt="Image">
+                <img src="./asset/${student.gender === 'Male' ? 'boy' : 'girl'}.png" alt="Image">
             </div>
             <div class="card-body">
                 <div class="content">

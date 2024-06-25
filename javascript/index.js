@@ -1,3 +1,4 @@
+// Loader
 window.addEventListener('load', () => {
     const overlay = document.getElementById('overlay');
     const loader = document.getElementById('loader');
@@ -13,6 +14,7 @@ window.addEventListener('load', () => {
     }
 });
 
+// Searchbar
 document.querySelector('.search-input').addEventListener('input', function() {
     if (this.value.length > 0) {
         this.classList.add('has-text');
@@ -21,6 +23,7 @@ document.querySelector('.search-input').addEventListener('input', function() {
     }
 });
 
+// Buttons Animations
 document.querySelectorAll('.search-btn , .add-btn , .delete-btn , .cancel-btn').forEach(button => {
     button.addEventListener('mouseenter', function(e) {
         const rect = button.getBoundingClientRect();
@@ -32,6 +35,7 @@ document.querySelectorAll('.search-btn , .add-btn , .delete-btn , .cancel-btn').
     });
 });
 
+// Hide Overflow add-student Button
 document.addEventListener('DOMContentLoaded', (event) => {
     const container = document.querySelector('.add-student-container');
     const addStudentElement = document.querySelector('.add-student');
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// Student Card Animations
 const studentCard = document.querySelector('.student-card');
 
 studentCard.addEventListener('mouseenter', () => {
@@ -56,21 +61,24 @@ studentCard.addEventListener('mouseleave', () => {
     studentCard.classList.add('opacityhidden');
 });
 
-
+// Dynamic Text Animation
 var textWrapper = document.querySelector('.ml3');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: true})
-  .add({
+.add({
     targets: '.ml3 .letter',
     opacity: [0,1],
     easing: "easeInOutQuad",
     duration: 2250,
     delay: (el, i) => 150 * (i+1)
-  }).add({
+})
+.add({
     targets: '.ml3',
     opacity: 0,
     duration: 1000,
     easing: "easeOutExpo",
     delay: 1000
-  });
+});
+
+// Student Array
