@@ -9,22 +9,24 @@
     align-items: center;
     justify-content: center;
     display: none;
+    z-index: 10;
 }
 
-.load{
+.loader{
     --uib-size: 40px;
     --uib-color: white;
-    --uib-speed: .9s;
+    --uib-speed: .5s;
     --uib-center: calc(var(--uib-size) / 2 - var(--uib-size) / 5 / 2);
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: 5%;
+    top: 50%;
     left: 50%;
     height: var(--uib-size);
     width: var(--uib-size);
     animation: rotate calc(var(--uib-speed) * 3) linear infinite;
+    z-index: 100;
 }
 
 .dot {

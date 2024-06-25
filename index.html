@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Project 01</title>
+    <link rel="shortcut icon" href="./asset/favicon.png" type="image/x-icon">
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/loader.css">
@@ -23,13 +24,19 @@
             </div>
             <form class="d-flex" role="search">
                 <input class="form-control me-2 search-input" placeholder="Search" type="search" aria-label="Search">
-                <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+                <button class="btn btn-outline-success search-btn" type="submit">
+                    <span class="search-text">Search</span>
+                </button>
             </form>            
         </div>
     </nav>
 
-    <div class="add-student">
-        <button class="btn btn-success add-btn" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+ Add Student</button>
+    <div class="add-student-container">
+        <div class="add-student">
+            <button class="btn btn-success add-btn" type="submit" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <span class="add-text">+ Add Student</span>
+            </button>
+        </div>
     </div>
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -46,8 +53,8 @@
                         </div>
                         <div class="form-group">
                             <select class="form-control" id="gender">
-                                <option value="male">Male</option>
-                                <option value="female">Female</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -61,21 +68,44 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary add-btn">Add</button>
+                        <button type="submit" class="btn btn-primary add-btn">
+                            <span class="add-text">Add Now</span>
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
-    <div class="card-container">
-        <!-- Existing card as example -->
+    <div class="card-container"></div>
+
+    <div class="modal fade" id="staticDelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="question-icon-group">
+                        <i class="fa-solid fa-question question-icon"></i>
+                    </div>
+                    <div class="body-content">
+                        <h3 class="ml3">
+                            <span class="text-wrapper">
+                              <span class="letters">Delete Student</span>
+                            </span>
+                          </h3>
+                        <p>Are you sure you want to delete this student?</p>
+                    </div>
+                    <div class="button-group">
+                        <button class="btn btn-primary delete-btn" data-bs-toggle="modal" id="delete-button"><span class="delete-text">Delete</span></button>
+                        <button class="btn btn-primary cancel-btn" data-bs-dismiss="modal" aria-label="Close"><span class="cancel-text">Cancel</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-    
     <div class="overlay" id="overlay">
-        <div class="load" tabindex="0" id="loader">
+        <div class="loader" tabindex="0" id="loader">
             <div class="dot"></div>
             <div class="dot"></div>
             <div class="dot"></div>
@@ -87,14 +117,34 @@
         </div>
     </div>
 
-    <div class="popup-message" id="popup-message"></div>
+    <div class="popup-student-add" id="popup-student-add">
+        <div class="user-plus-icon-group">
+            <i class="fa-solid fa-user-plus user-plus-icon"></i>
+        </div>
+        <div class="success-text">
+            <p>Student added successfully...!</p>
+        </div>
+    </div>
+
+    <div class="popup-student-delete" id="popup-student-delete">
+        <div class="trash-arrow-up-icon-group">
+            <i class="fa-solid fa-trash-arrow-up trash-arrow-up-icon"></i>
+        </div>
+        <div class="deleted-text">
+            <p>Student deleted successfully...!</p>
+        </div>
+    </div>
 
 
     <div style="margin: 50px;"></div>
     
+    <script src="./javascript/indexremove.js"></script>
+    <script src="./javascript/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="./javascript/script.js"></script>
+    <script src="./javascript/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="./javascript/bootstrap.min.js"></script>
+
 </body>
 </html>
