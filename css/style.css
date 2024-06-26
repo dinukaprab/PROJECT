@@ -213,6 +213,7 @@ body{
 }
 
 .delete-btn,
+.delete-btn-btn,
 .cancel-btn{
     margin: 20px 0 5px 0;
     border: none !important;
@@ -225,7 +226,8 @@ body{
     transition: color 0.3s;
 }
 
-.delete-btn{
+.delete-btn,
+.delete-btn-btn{
     background-color: #dc3545 !important;
 }
 .cancel-btn{
@@ -233,6 +235,7 @@ body{
 }
 
 .delete-btn::before,
+.delete-btn-btn::before,
 .cancel-btn::before{
     content: '';
     position: absolute;
@@ -247,6 +250,7 @@ body{
 }
 
 .delete-btn:hover::before,
+.delete-btn-btn:hover::before,
 .cancel-btn:hover::before{
     width: 700%;
     height: 2000%;
@@ -265,6 +269,7 @@ body{
 }
 
 .delete-btn:hover .delete-text,
+.delete-btn-btn:hover .delete-text,
 .cancel-btn:hover .cancel-text{
     color: #032830 !important;
 }

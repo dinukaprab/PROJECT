@@ -27,7 +27,7 @@ document.querySelector('.search-input').addEventListener('input', function() {
 });
 
 // Buttons Animations
-document.querySelectorAll('.search-btn , .add-btn , .delete-btn , .cancel-btn').forEach(button => {
+document.querySelectorAll('.search-btn , .add-btn , .delete-btn , .delete-btn-btn , .cancel-btn').forEach(button => {
     button.addEventListener('mouseenter', function(e) {
         const rect = button.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -128,7 +128,7 @@ function displayStudents() {
             `;
             cardContainer.appendChild(card);
         });
-
+            
         document.querySelectorAll('.delete-btn').forEach(button => {
             button.addEventListener('click', function() {
                 const index = this.getAttribute('data-index');
@@ -137,47 +137,65 @@ function displayStudents() {
         });
 }
 
-// Add Student
-document.getElementById('student-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById('student-name').value;
-    const gender = document.getElementById('gender').value;
-    const dob = document.getElementById('dob').value;
-    const address = document.getElementById('address').value;
-    const contact = document.getElementById('contact').value;
-
-    students.push({ name, gender, dob, address, contact });
-    displayStudents();
-    showStudentAdd();
-    this.reset();
-});
-
+// Student delete button
 document.getElementById('student-delete-button').addEventListener('click', function() {
     const index = this.getAttribute('data-index');
-    if (students.length > 0) {
-        showLoader();
-        setTimeout(() => {
-            hideLoader();
-            students.splice(index, 1);
-            displayStudents();
-            showStudentDelete();
-        }, 1000);
-    }
+    showLoader();
+    setTimeout(() => {
+        hideLoader();
+        students.splice(index, 1);
+        displayStudents();
+        showStudentDelete();
+        const modal = bootstrap.Modal.getInstance(document.getElementById('staticDelete'));
+        modal.hide();
+    }, 1500);
 });
+
+// Add a new student
+document.getElementById('student-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('staticBackdrop'));
+    modal.hide();
+    
+    showLoader();
+
+    setTimeout(() => {
+        hideLoader();
+
+        const name = document.getElementById('student-name').value;
+        const gender = document.getElementById('gender').value;
+        const dob = document.getElementById('dob').value;
+        const address = document.getElementById('address').value;
+        const contact = document.getElementById('contact').value;
+
+        students.push({ name, gender, dob, address, contact });
+
+        displayStudents();
+
+
+        document.getElementById('student-form').reset();
+
+        showStudentAdd();
+    }, 1000);
+});
+
 
 // Show Loader
 function showLoader() {
     const overlay = document.getElementById('overlay');
     const loader = document.getElementById('loader');
+    const CardContainer = document.getElementById('card-container');
 
     if (loader && overlay) {
         loader.style.display = 'block';
         overlay.style.display = 'block';
+        CardContainer.style.opacity = '0'; 
 
         setTimeout(() => {
             loader.style.display = 'none';
             overlay.style.display = 'none';
+            CardContainer.style.opacity = '1'; 
         }, 1500);
     } else {
         console.error('Loader or overlay element not found');
@@ -188,15 +206,16 @@ function showLoader() {
 function hideLoader() {
     const loader = document.getElementById('loader');
     const overlay = document.getElementById('overlay');
+    const CardContainer = document.getElementById('card-container');
 
     if (loader && overlay) {
         loader.style.display = 'none';
         overlay.style.display = 'none';
+        CardContainer.style.opacity = '1'; 
     } else {
         console.error('Loader or overlay element not found');
     }
 }
-
 
 // Show Student Popup Message
 function showStudentAdd() {
@@ -217,3 +236,4 @@ function showStudentDelete() {
 }
 
 displayStudents();
+
