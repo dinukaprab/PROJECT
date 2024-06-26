@@ -137,6 +137,8 @@ body{
     text-align: center;
     display: grid ;
     grid-template-columns: auto auto auto auto;
+    animation: showContent2 0.7s 1s linear 1 forwards;
+    transition: transform 0.7s;
 }
 
 .student-card {
@@ -145,9 +147,8 @@ body{
     height: auto !important;
     border-radius: 10px;
     box-shadow: 0 0 10px #032830;
-    opacity: 0;
     animation: showContent2 0.7s 1s linear 1 forwards;
-    transition: opacity 0.7s, transform 0.7s;
+    transition: transform 0.7s;
 }
 
 @keyframes showContent2 {
@@ -178,17 +179,6 @@ body{
     }
 }
 
-.opacityhidden {
-    animation: hideContent2 0.7s linear 1 forwards;
-    transition: opacity 0.7s, transform 0.7s;
-}
-
-@keyframes hideContent2 {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .student-card img{
     padding: 20px;
@@ -357,13 +347,13 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .ml3 .letter {
-    color: #ed0908;
     transform-origin: 50% 100%;
     display: inline-block;
     line-height: 1em;
 }
 
 .ml3 {
+    color: #ed0908;
     font-size: 30px !important;
     text-transform: uppercase;
     font-weight: 700;
