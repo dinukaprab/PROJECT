@@ -13,6 +13,10 @@ An efficient and user-friendly Student Management System designed to ACPT - Acad
 - Modern and intuitive UI of the Student Management System, 
 <p align="center"><img src="https://github.com/dinukaprab/project-01/blob/main/asset/Screenshot%202024-06-30%20235632.png" width="700"></p>
 
+----
+
+<br>
+
 ## Studens card,
 - student card reffer student details `student name` , `gender` , `date of birth` , `address` , `contact number`
 <p align="center"><img src="https://github.com/dinukaprab/project-01/blob/main/asset/studentcard.png" width="300"></p>
